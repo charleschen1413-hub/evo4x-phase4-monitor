@@ -1,1 +1,105 @@
-<!doctype html><meta charset="utf-8"><title>phase4 monitor</title><p>phase4 監控頁待第一次推送。</p>
+<!DOCTYPE html><html lang="zh-Hant"><head><meta http-equiv="refresh" content="300"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>evo4x phase4 10天任務分派與循環監控</title>
+<style>
+body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;margin:0;background:#f5f6f8;color:#222}
+header{background:#1f2d3d;color:#fff;padding:12px 16px}h1{font-size:18px;margin:0}h2{font-size:16px;margin:0 0 8px}
+section{background:#fff;margin:10px;padding:12px;border-radius:8px;box-shadow:0 1px 3px #0002;overflow-x:auto}
+svg text{font-size:12px}.node{cursor:pointer}#detail{background:#eef4ff;padding:8px;border-radius:6px;margin-top:6px;font-size:14px;min-height:40px}
+.lanes{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.w{padding:6px 2px;border-radius:4px;text-align:center;font-size:12px;color:#fff}
+.A{background:#2b7bd6}.B{background:#e07b20}.G{background:#3a9b5c}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{border:1px solid #ddd;padding:4px 6px;text-align:left}th{background:#f0f0f0}
+.inp{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px;font-size:13px}.inp input{width:100%;box-sizing:border-box}
+.note{font-size:12px;color:#666}
+</style></head><body>
+<header><h1>evo4x phase4：10 天任務分派與循環監控</h1><div class="note" style="color:#ccc">起始 2026-10-30（台北時間 UTC+8）｜負責：4x.A／4x.B／GM</div></header><section id="live"><h2>⓪ 即時資料（自動更新）</h2><p class="note">最後更新：2026-10-30 09:32:39（台北時間 UTC+8）｜每 10 分鐘由 launchd 重寫，頁面每 5 分鐘自動重載。分母：m1 19,300 = L2 17,700 + A TR 700 + B 加法批1 500 + sgB/kokB hold 200 + tierTransB/coolTTB 200；tickB 400 另計。</p><h3>1分K快篩（m1）</h3><table><tr><th>族</th><th>done</th><th>run</th><th>todo</th><th>hold</th><th>其他</th><th>合計</th></tr>
+<tr><td>L2</td><td>140</td><td>84</td><td>17,476</td><td>0</td><td>0</td><td>17,700</td></tr>
+<tr><td>TR:coolB</td><td>100</td><td>0</td><td>0</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:coolTTB</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:dm</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:dstopV</td><td>100</td><td>0</td><td>0</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:dstopf1V</td><td>100</td><td>0</td><td>0</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:gb</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:hour</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:kbarB</td><td>100</td><td>0</td><td>0</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:kokB</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>100</td></tr>
+<tr><td>TR:pcrB</td><td>100</td><td>0</td><td>0</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:rth</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:sgB</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>100</td></tr>
+<tr><td>TR:stop</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:tier</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:tierTransB</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td>TR:tierp15</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+<tr><td><b>合計</b></td><td><b>640</b></td><td><b>84</b></td><td><b>18,376</b></td><td><b>200</b></td><td><b>0</b></td><td><b>19,300</b></td></tr></table><h3>tickB</h3><table><tr><th>族</th><th>done</th><th>run</th><th>todo</th><th>hold</th><th>其他</th><th>合計</th></tr>
+<tr><td>TR</td><td>20</td><td>7</td><td>373</td><td>0</td><td>0</td><td>400</td></tr>
+<tr><td><b>合計</b></td><td><b>20</b></td><td><b>7</b></td><td><b>373</b></td><td><b>0</b></td><td><b>0</b></td><td><b>400</b></td></tr></table><h3>slices</h3><p class="note">尚無 slice。</p></section><script>var LIVE={"updated": "2026-10-30 09:32:39", "agg": {"m1": {"L2": {"done": 140, "run": 84, "todo": 17476}, "TR:gb": {"todo": 100}, "TR:tier": {"todo": 100}, "TR:tierp15": {"todo": 100}, "TR:stop": {"todo": 100}, "TR:dm": {"todo": 100}, "TR:hour": {"todo": 100}, "TR:rth": {"todo": 100}, "TR:dstopV": {"done": 100}, "TR:dstopf1V": {"done": 100}, "TR:coolB": {"done": 100}, "TR:pcrB": {"done": 100}, "TR:kbarB": {"done": 100}, "TR:sgB": {"hold": 100}, "TR:kokB": {"hold": 100}, "TR:tierTransB": {"todo": 100}, "TR:coolTTB": {"todo": 100}}, "tickB": {"TR": {"done": 20, "run": 7, "todo": 373}}}, "slices": []};</script>
+
+<section><h2>① 流程圖（點節點看細節）</h2><svg id="flow" viewBox="0 0 900 260" width="100%"></svg><div id="detail">點任一節點顯示負責人、worker、規則、ETA。</div></section>
+
+<section><h2>② 14 個 worker 分派</h2><div class="lanes" id="lanes"></div>
+<p class="note">規則：B 的 tick 佇列空了 → B 的 worker 去支援 A 的 1 分 K 快篩；有 slice 就緒 → tick worker 先接 slice，再接直送 tick 族（stopC→trans→nap→dstopC）；正在跑的區塊不砍，在區塊邊界換手；不能有空閒 worker。第一、二階段審核由 GM 在 M3 上親自跑。</p>
+<p class="note"><span class="w A" style="padding:2px 6px">4x.A 快篩</span> <span class="w B" style="padding:2px 6px">4x.B tick 重跑</span></p></section>
+
+<section><h2>③ 時程甘特（可改參數，即時重算）</h2>
+<div class="inp">
+<label>快篩總組數<input id="tot" type="number" value="235214700"></label>
+<label>快篩速度（組/秒，A 全部 worker）<input id="qs" type="number" value="300"></label>
+<label>tick 速度（組/秒/worker）<input id="ts" type="number" step="0.01" value="0.89"></label>
+<label>A worker 數<input id="wa" type="number" value="7"></label>
+<label>B worker 數<input id="wb" type="number" value="7"></label>
+<label>每批組數<input id="sl" type="number" value="50000000"></label>
+<label>slice01 ETA<input id="s1" type="datetime-local" value="2026-11-01T05:30"></label>
+<label>每批送 tick 組數（safety_net＋cell 前段）<input id="pt" type="number" value="63772"></label>
+</div>
+<p class="note">快篩總組數 235,214,700 會因補上的族而變大，<b>待第五輪核對後更新</b>。快篩速度是以 7 個 worker 為基準，改 A worker 數會等比例換算。每批送 tick 組數預設只填 safety_net（63,772），cell 前 50（kokB 前 200）的組數出來後請自行加上。</p>
+<svg id="gantt" width="100%"></svg>
+<table id="slt"><thead><tr><th>批次</th><th>快篩滿</th><th>tick 完成</th><th>負責</th><th>狀態</th></tr></thead><tbody></tbody></table>
+<p class="note">狀態存在本機瀏覽器（localStorage），換瀏覽器不會跟著走。</p></section>
+
+<section><h2>④ 直送 tick 族</h2><table><tr><th>族</th><th>組數</th><th>ETA（台北時間）</th><th>負責</th></tr>
+<tr><td>stopC</td><td>288,000</td><td>10/30 19–20 點</td><td>4x.B</td></tr>
+<tr><td>trans</td><td>453,600</td><td>約 10/31 16:00</td><td>4x.B</td></tr>
+<tr><td>nap</td><td>14,400</td><td>trans 完成後約 +40 分</td><td>4x.B</td></tr>
+<tr><td>dstopC</td><td>1,728,000</td><td>約 11/3 中午（插入 slice 後會延後）</td><td>4x.B</td></tr></table></section>
+
+<section><h2>⑤ 待補花招族（加法層，負責 4x.B）</h2><table id="fam"><thead><tr><th>族</th><th>內容</th><th>狀態</th></tr></thead><tbody></tbody></table></section>
+
+<script>
+var N=[
+{id:"q",x:10,t:"1分K快篩",o:"4x.A",d:"負責 4x.A，7 個 worker，約 300 組/秒。總組數 235,214,700（待第五輪核對後更新）。"},
+{id:"s",x:160,t:"切 sliceNN",o:"4x.A",d:"切批程式 每 5 千萬組切一批：各 cell 前 50 名（kokB 前 200）用 trim_exp 排，safety_net 用 trim_pf 排；safety_net 上限 30 萬，每批約 63,772 組。輸出 sliceNN 佇列，寫完放 DONE。slice01 預計 11/1 05:30。"},
+{id:"t",x:310,t:"tick重跑",o:"4x.B",d:"負責 4x.B，7 個 worker，約 0.89 組/秒/worker。先接 slice 佇列，再接直送 tick 族 stopC→trans→nap→dstopC。在區塊邊界換手，不砍正在跑的區塊。"},
+{id:"p1",x:460,t:"第一階段",o:"GM",d:"GM 在 M3 上親自跑：v0.98 四漏斗＋二考／三考／固定停損。每批跑完就列出每個候選過或不過。"},
+{id:"p2",x:610,t:"第二階段",o:"GM",d:"GM 在 M3 上親自跑：補強 v2.2＋四大紅線（統一 WFE：5 窗、≥0.50 且至少 2 窗有交易）。"},
+{id:"r",x:760,t:"過審／不過",o:"GM",d:"第二階段不過的一律不列出、不交辦。過審的用 evo4x 命名，須 Charles 親自核准。"}];
+var C={"4x.A":"#2b7bd6","4x.B":"#e07b20","GM":"#3a9b5c"},f=document.getElementById("flow"),h="";
+h+='<defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0L8,4L0,8z" fill="#555"/></marker></defs>';
+N.forEach(function(n,i){if(i<N.length-1)h+='<line x1="'+(n.x+125)+'" y1="90" x2="'+(N[i+1].x)+'" y2="90" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>';
+h+='<g class="node" data-i="'+i+'"><rect x="'+n.x+'" y="60" width="125" height="60" rx="10" fill="'+C[n.o]+'"/><text x="'+(n.x+62)+'" y="86" fill="#fff" text-anchor="middle" font-weight="bold">'+n.t+'</text><text x="'+(n.x+62)+'" y="106" fill="#fff" text-anchor="middle">'+n.o+'</text></g>';});
+h+='<path d="M372,120 Q372,200 222,200 Q160,200 160,125" fill="none" stroke="#999" stroke-dasharray="5" marker-end="url(#ar)"/><text x="230" y="225" fill="#666">每 5 千萬一批，循環到快篩結束</text>';
+h+='<text x="310" y="40" fill="#666">直送 tick：stopC→trans→nap→dstopC</text>';
+f.innerHTML=h;f.querySelectorAll(".node").forEach(function(g){g.onclick=function(){var n=N[g.dataset.i];document.getElementById("detail").innerHTML="<b>"+n.t+"</b>（負責 "+n.o+"）：<br>"+n.d;};});
+var L=document.getElementById("lanes");for(var i=1;i<=14;i++){var a=i<=7;L.innerHTML+='<div class="w '+(a?"A":"B")+'">W'+i+'<br>'+(a?"4x.A 快篩":"4x.B tick")+'</div>';}
+var ST=["等待","快篩中","tick中","第一階段","第二階段","完成"];
+function fmt(d){return (d.getMonth()+1)+"/"+d.getDate()+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
+function calc(){var g=function(k){return +document.getElementById(k).value;};
+var tot=g("tot"),qs=g("qs")*g("wa")/7,ts=g("ts")*g("wb"),sl=g("sl"),pt=g("pt"),s1=new Date(document.getElementById("s1").value);
+var n=Math.ceil(tot/sl),t0=new Date("2026-10-30T00:00"),rows=[],tickFree=s1.getTime();
+for(var k=0;k<n;k++){var full=new Date(s1.getTime()+k*Math.min(sl,tot)/qs*1000);if(k==n-1&&tot%sl)full=new Date(s1.getTime()+((k-1)*sl+tot%sl)/qs*1000);
+var st=Math.max(full.getTime(),tickFree),end=new Date(st+pt/ts*1000);tickFree=end.getTime();rows.push({id:"slice"+("0"+(k+1)).slice(-2),full:full,end:end});}
+var tb=document.querySelector("#slt tbody");tb.innerHTML="";rows.forEach(function(r){var v=localStorage.getItem("p4_"+r.id)||"等待",o=ST.map(function(s){return "<option"+(s==v?" selected":"")+">"+s+"</option>";}).join("");
+tb.innerHTML+="<tr><td>"+r.id+"</td><td>"+fmt(r.full)+"</td><td>"+fmt(r.end)+"</td><td>4x.A→4x.B→GM</td><td><select data-k='p4_"+r.id+"'>"+o+"</select></td></tr>";});
+tb.querySelectorAll("select").forEach(function(s){s.onchange=function(){localStorage.setItem(s.dataset.k,s.value);};});
+var D=10,W=900,day=W/D,gs=document.getElementById("gantt"),H=30+rows.length*22+110,x=function(d){return (d-t0)/864e5*day;},s="";
+gs.setAttribute("viewBox","0 0 "+(W+90)+" "+H);gs.setAttribute("height",Math.min(H*1.0,600));
+for(var d=0;d<=D;d++){var dd=new Date(t0.getTime()+d*864e5);s+='<line x1="'+(80+d*day)+'" y1="15" x2="'+(80+d*day)+'" y2="'+H+'" stroke="#eee"/><text x="'+(82+d*day)+'" y="12" fill="#888">'+(dd.getMonth()+1)+"/"+dd.getDate()+'</text>';}
+var y=25,bar=function(lbl,a,b,c){var x1=80+Math.max(0,x(a)),x2=80+Math.min(W,x(b));if(x2<x1+2)x2=x1+2;s+='<text x="0" y="'+(y+12)+'">'+lbl+'</text><rect x="'+x1+'" y="'+y+'" width="'+(x2-x1)+'" height="14" fill="'+c+'" rx="3"/>';y+=22;};
+var prev=new Date("2026-10-30T07:00");rows.forEach(function(r){bar(r.id+" 快篩",prev,r.full,"#2b7bd6");prev=r.full;});
+rows.forEach(function(r){bar(r.id+" tick",new Date(r.end-pt/ts*1000),r.end,"#e07b20");});
+bar("stopC",new Date("2026-10-30T07:00"),new Date("2026-10-30T19:30"),"#c96a10");bar("trans",new Date("2026-10-30T19:30"),new Date("2026-10-31T16:00"),"#c96a10");
+bar("nap",new Date("2026-10-31T16:00"),new Date("2026-10-31T16:40"),"#c96a10");bar("dstopC",new Date("2026-10-31T16:40"),new Date("2026-11-03T12:00"),"#c96a10");
+var now=new Date();if(now>t0)s+='<line x1="'+(80+x(now))+'" y1="15" x2="'+(80+x(now))+'" y2="'+H+'" stroke="red"/>';
+gs.innerHTML=s;}
+document.querySelectorAll(".inp input").forEach(function(i){i.oninput=calc;});calc();
+var F=[["kbarB3","VB/DB 完整格點：質數＋7/9/11 倍數，DB 視窗×期數全交叉，並收入舊 phase 的質數 82／倍數 88 個 frame"],["sesstier","tier 分時段：rth/eth/asia/eu/day"],["tierS 192","tier 參數範圍補回 phase2b 的 192 組"],["coolS","cool 進場與冷卻 10 層"],["QS8","進場特徵濾網分位 8 檔"],["dualV 108","dual 雙倍停損＋VOL2 閘"],["dmR2 2520","dstopmae 細格 1260 組 × V331"],["BB 48格","BBStrike 的 BB：長度 6 × 寬度 8"],["st6","三振振數加 6"],["holdB 288","持單時間預警（含冷卻 0–8 小時）"],["holdBBB 192","BB 三振＋持單預警 AND"],["roleB 49","K01 角色分工 family 10–14"],["Bfl","rearm 最小點數細檔 0.25–16（含 kok 的 B）"],["pcrMB","PCR MACD：EQ 203、SPX 424 組 × switch/gate/both"],["smult6","固定 ATR 停損倍數加到 6"],["f1usd10","stopf1 金額 10 檔（250–3000）"],["dstopV/f1V 擴充","dstop 三種模式 × 9 個 ATR 倍數；dstopf1 金額 10 檔"],["CGRID 擴充","stopC 觸發：虧損 ATR 倍數到 2、棒數 1–8"],["RTH 閘","d 系列停損加 RTH 閘"],["coolB N/money/dyn","tier1 cool：連虧次數／連虧金額／動態"],["hoursK","禁最差的 4–20 個進場小時"],["v33x 432","v33 出場"],["kok k06 ~202","kok 回吐平滑規格"],["adpB 416","ADP 出場 C×J，30 秒／60 秒"],["adpDW","ADP 雙窗口 k1×k2，多空分開"],["riskA 66","K06 風控"],["adxF 108","ADX＋sense 濾網"],["k01x 66","K01 r2/r4 出場＋限次"],["timecapB 22","固定分鐘時間上限出場"]];
+var fb=document.querySelector("#fam tbody");F.forEach(function(r){fb.innerHTML+="<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td>移植中（4x.B）</td></tr>";});
+</script></body></html>
